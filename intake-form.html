@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic Brand Services — Client Intake Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between p-4 md:p-8">
+
+  <!-- Header -->
+  <header class="max-w-6xl w-full mx-auto flex items-center justify-between py-4 border-b border-slate-800">
+    <div class="flex items-center space-x-3">
+      <div class="w-10 h-10 rounded-xl bg-teal-500 text-slate-950 flex items-center justify-center font-extrabold text-lg shadow-lg shadow-teal-500/20">
+        AI
+      </div>
+      <div>
+        <h1 class="font-extrabold text-lg tracking-tight">Brand Engine Intake Studio</h1>
+        <p class="text-xs text-slate-400">Automated Web & Brand Compiler Pipeline</p>
+      </div>
+    </div>
+    <div class="flex items-center space-x-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-full text-xs font-semibold text-teal-400">
+      <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+      <span>API Endpoint: http://localhost:3000</span>
+    </div>
+  </header>
+
+  <!-- Main Grid -->
+  <main class="max-w-6xl w-full mx-auto my-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+    
+    <!-- Form Section -->
+    <div class="lg:col-span-7 bg-slate-900/60 border border-slate-800 p-6 md:p-8 rounded-2xl backdrop-blur-xl shadow-2xl space-y-6">
+      <div class="space-y-1">
+        <h2 class="text-xl font-extrabold text-white">Create New Web & Brand Project</h2>
+        <p class="text-xs text-slate-400">Fill in the project brief below to compile a custom HTML deliverable across specialized verticals.</p>
+      </div>
+
+      <form id="intakeForm" class="space-y-5">
+        
+        <!-- Client Name -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Brand / Client Name</label>
+          <input type="text" id="clientName" placeholder="e.g. Aura Wear, Ondriv Mobility, Solitaire Atelier" required
+            class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-teal-500 transition placeholder-slate-600">
+        </div>
+
+        <!-- Vertical Selection -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Industry Vertical Framework</label>
+          <select id="industryVertical" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-teal-500 transition">
+            <option value="fashion">Fashion & Apparel E-Commerce (Minimal & Merch)</option>
+            <option value="urban_fashion" selected>Custom Urban Streetwear & High-Fashion (Clothing-Rail & Tags)</option>
+            <option value="jewelry">Luxury Jewelry & Fine Accessories (Serif Editorial)</option>
+            <option value="tech">Smart Tech & Mobility System (Dark & Neon Teal)</option>
+            <option value="portfolio">Artist Portfolio & Performer Resume (Clean Layout)</option>
+            <option value="wedding">Matrimonial & Event Stationery (RSVP & Schedules)</option>
+          </select>
+        </div>
+
+        <!-- Color Palette -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Brand Palette (Background, Accent Hex)</label>
+          <input type="text" id="colorPalette" placeholder="e.g. #0D0C0D,#6D5C91 or #030303,#26A58A"
+            class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-teal-500 transition placeholder-slate-600">
+        </div>
+
+        <!-- Project Brief -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">Detailed Project Brief</label>
+          <textarea id="projectBrief" rows="4" placeholder="Describe the brand vision, key features, navigation links, and target audience..."
+            class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-teal-500 transition placeholder-slate-600"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submitBtn"
+          class="w-full py-4 bg-teal-500 hover:bg-teal-400 text-slate-950 font-extrabold text-sm rounded-xl shadow-lg shadow-teal-500/25 transition transform active:scale-95 flex items-center justify-center space-x-2">
+          <span>🚀 Compile Site Deliverable</span>
+        </button>
+
+      </form>
+    </div>
+
+    <!-- Live Preview & Output Column -->
+    <div class="lg:col-span-5 space-y-6">
+      
+      <!-- Payload JSON Preview -->
+      <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl backdrop-blur-xl space-y-3">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Live JSON Payload</span>
+          <span class="text-[10px] bg-slate-800 text-teal-400 px-2 py-0.5 rounded font-mono">POST /api/build</span>
+        </div>
+        <pre id="jsonPreview" class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-teal-300 overflow-x-auto border border-slate-800/80">
+{
+  "name": "",
+  "vertical": "urban_fashion",
+  "palette": "",
+  "brief": ""
+}
+        </pre>
+      </div>
+
+      <!-- Result Card -->
+      <div id="resultCard" class="hidden bg-slate-900/80 border border-teal-500/30 p-6 rounded-2xl space-y-4 shadow-xl">
+        <div class="flex items-center space-x-2 text-teal-400 font-bold text-sm">
+          <span class="text-lg">✅</span>
+          <span>Deliverable Compiled Successfully!</span>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed" id="resultMeta">
+          Your project was processed by the CLI compiler engine.
+        </p>
+        <div class="pt-2">
+          <a id="downloadBtn" href="#" target="_blank"
+            class="block w-full text-center py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl border border-slate-700 transition">
+            🔗 Open Deliverable in Browser
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Script Handler -->
+  <script>
+    const form = document.getElementById('intakeForm');
+    const clientNameInput = document.getElementById('clientName');
+    const verticalSelect = document.getElementById('industryVertical');
+    const paletteInput = document.getElementById('colorPalette');
+    const briefInput = document.getElementById('projectBrief');
+    const jsonPreview = document.getElementById('jsonPreview');
+    const resultCard = document.getElementById('resultCard');
+    const resultMeta = document.getElementById('resultMeta');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    function updatePreview() {
+      const payload = {
+        name: clientNameInput.value || 'Client Brand',
+        vertical: verticalSelect.value,
+        palette: paletteInput.value || undefined,
+        brief: briefInput.value || undefined
+      };
+      jsonPreview.textContent = JSON.stringify(payload, null, 2);
+    }
+
+    [clientNameInput, verticalSelect, paletteInput, briefInput].forEach(el => el.addEventListener('input', updatePreview));
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>⚡ Compiling Deliverable...</span>';
+
+      const payload = {
+        name: clientNameInput.value,
+        vertical: verticalSelect.value,
+        palette: paletteInput.value,
+        brief: briefInput.value
+      };
+
+      try {
+        const res = await fetch('http://localhost:3000/api/build', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (data.status === 'success') {
+          resultCard.classList.remove('hidden');
+          resultMeta.textContent = `Brand: ${data.brand} | Vertical: ${data.vertical} | File: ${data.file}`;
+          downloadBtn.href = `http://localhost:3000${data.downloadUrl}`;
+        } else {
+          alert('Error: ' + data.message);
+        }
+      } catch (err) {
+        alert('Failed to connect to local API server at http://localhost:3000. Ensure api-server.js is running!');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>🚀 Compile Site Deliverable</span>';
+      }
+    });
+
+    updatePreview();
+  </script>
+</body>
+</html>

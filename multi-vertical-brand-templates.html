@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Vertical Brand & Web Design Template System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ondriv: { dark: '#030303', teal: '#26A58A', navy: '#036A5F', accent: '#F11A00' },
+            seron: { blue: '#0B32E2', amber: '#F0A439', light: '#F3F4F6' },
+            jewelry: { espresso: '#140B06', bronze: '#5E4130', softblue: '#BAC4EB', slate: '#A4AEB0' },
+            roobinium: { dark: '#0D0C0D', purple: '#6D5C91', lavender: '#88749B', sand: '#E2DED2' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .tab-btn.active {
+      border-bottom: 2px solid #000;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+
+  <!-- TOP APP BAR / ENGINE CONTROLLER -->
+  <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></span>
+        <h1 class="text-lg font-bold tracking-wider uppercase">Multi-Vertical Brand Code System</h1>
+        <span class="bg-slate-800 text-slate-300 text-xs px-2.5 py-0.5 rounded-full">v2.0 Reusable</span>
+      </div>
+      <div class="text-xs text-slate-400 hidden md:block">
+        Grounded in Ondriv, Seron, Roobinium, Jewelry E-Com & Portfolio Sources
+      </div>
+    </div>
+
+    <!-- VERTICAL SWITCHER TABS -->
+    <div class="bg-slate-950 border-t border-slate-800 px-4">
+      <nav class="max-w-7xl mx-auto flex space-x-6 overflow-x-auto text-sm py-2" id="vertical-tabs">
+        <button onclick="switchVertical('fashion')" id="tab-fashion" class="tab-btn text-slate-300 hover:text-white pb-1 active">1. Fashion E-Commerce</button>
+        <button onclick="switchVertical('jewelry')" id="tab-jewelry" class="tab-btn text-slate-400 hover:text-white pb-1">2. Luxury Jewelry Store</button>
+        <button onclick="switchVertical('mobility')" id="tab-mobility" class="tab-btn text-slate-400 hover:text-white pb-1">3. Tech & Mobility Identity</button>
+        <button onclick="switchVertical('portfolio')" id="tab-portfolio" class="tab-btn text-slate-400 hover:text-white pb-1">4. Creative Portfolio / Resume</button>
+        <button onclick="switchVertical('wedding')" id="tab-wedding" class="tab-btn text-slate-400 hover:text-white pb-1">5. Event & Wedding Landing</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER FOR VERTICAL MODULES -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+
+    <!-- VERTICAL 1: FASHION & APPAREL E-COMMERCE -->
+    <section id="sec-fashion" class="vertical-section space-y-8">
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex justify-between items-center border-b pb-4 mb-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-purple-600">Vertical Template 01</span>
+            <h2 class="text-2xl font-bold">Fashion & Merch E-Commerce</h2>
+            <p class="text-sm text-gray-500">Inspired by Roobinium Wear & M. Sohel Fashion Landing Page</p>
+          </div>
+          <div class="flex space-x-2 text-xs">
+            <span class="bg-roobinium-dark text-white px-2.5 py-1 rounded">Dark: #0D0C0D</span>
+            <span class="bg-roobinium-purple text-white px-2.5 py-1 rounded">Accent: #6D5C91</span>
+            <span class="bg-roobinium-sand text-gray-800 px-2.5 py-1 rounded">Base: #E2DED2</span>
+          </div>
+        </div>
+
+        <!-- Fashion Hero Banner -->
+        <div class="relative bg-roobinium-sand rounded-xl p-8 md:p-12 overflow-hidden flex flex-col md:flex-row items-center justify-between">
+          <div class="space-y-4 max-w-lg z-10">
+            <span class="bg-roobinium-dark text-white text-xs uppercase px-3 py-1 rounded-full">New Collection 2026</span>
+            <h3 class="text-4xl font-extrabold text-roobinium-dark leading-tight">Discover Your Signature Style</h3>
+            <p class="text-gray-700 text-sm">Minimalist apparel with clothing-rail navigation, interactive color tags, and premium organic cotton fabrics.</p>
+            <div class="flex space-x-3 pt-2">
+              <button class="bg-roobinium-dark text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-black transition">Shop Signature Range</button>
+              <button class="bg-white border border-gray-300 text-gray-900 px-6 py-3 rounded-lg text-sm font-semibold hover:bg-gray-100">Explore Outfits</button>
+            </div>
+          </div>
+          <div class="mt-8 md:mt-0 flex space-x-4">
+            <div class="w-44 h-64 bg-gray-300 rounded-lg shadow-md flex items-center justify-center text-gray-500 font-semibold">[ Lookbook Item A ]</div>
+            <div class="w-44 h-64 bg-gray-400 rounded-lg shadow-md flex items-center justify-center text-white font-semibold">[ Lookbook Item B ]</div>
+          </div>
+        </div>
+
+        <!-- Interactive Color-Switched Tag Component (Roobinium Style) -->
+        <div class="mt-8 bg-gray-50 p-6 rounded-xl border">
+          <h4 class="font-bold text-sm uppercase text-gray-700 mb-4">Interactive Merch Color Swatch Controller</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow-sm border space-y-3">
+              <div class="h-40 bg-gray-200 rounded-md flex items-center justify-center text-gray-400" id="fashion-card-1">Apparel Preview</div>
+              <h5 class="font-semibold text-sm">Studio Oversized Hoodie</h5>
+              <p class="text-xs text-gray-500">$95.00 · Organic Cotton</p>
+              <div class="flex space-x-2">
+                <button onclick="changeColor('fashion-card-1', '#0D0C0D')" class="w-6 h-6 rounded-full bg-[#0D0C0D] border"></button>
+                <button onclick="changeColor('fashion-card-1', '#6D5C91')" class="w-6 h-6 rounded-full bg-[#6D5C91] border"></button>
+                <button onclick="changeColor('fashion-card-1', '#88749B')" class="w-6 h-6 rounded-full bg-[#88749B] border"></button>
+              </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border space-y-3">
+              <div class="h-40 bg-gray-200 rounded-md flex items-center justify-center text-gray-400" id="fashion-card-2">Apparel Preview</div>
+              <h5 class="font-semibold text-sm">Minimalist Trench Coat</h5>
+              <p class="text-xs text-gray-500">$190.00 · Waterproof Weave</p>
+              <div class="flex space-x-2">
+                <button onclick="changeColor('fashion-card-2', '#0D0C0D')" class="w-6 h-6 rounded-full bg-[#0D0C0D] border"></button>
+                <button onclick="changeColor('fashion-card-2', '#A07C65')" class="w-6 h-6 rounded-full bg-[#A07C65] border"></button>
+                <button onclick="changeColor('fashion-card-2', '#E2DED2')" class="w-6 h-6 rounded-full bg-[#E2DED2] border"></button>
+              </div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow-sm border space-y-3">
+              <div class="h-40 bg-gray-200 rounded-md flex items-center justify-center text-gray-400" id="fashion-card-3">Apparel Preview</div>
+              <h5 class="font-semibold text-sm">Tailored Wool Trousers</h5>
+              <p class="text-xs text-gray-500">$120.00 · Regular Fit</p>
+              <div class="flex space-x-2">
+                <button onclick="changeColor('fashion-card-3', '#5A4C62')" class="w-6 h-6 rounded-full bg-[#5A4C62] border"></button>
+                <button onclick="changeColor('fashion-card-3', '#0D0C0D')" class="w-6 h-6 rounded-full bg-[#0D0C0D] border"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERTICAL 2: LUXURY JEWELRY STORE -->
+    <section id="sec-jewelry" class="vertical-section hidden space-y-8">
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex justify-between items-center border-b pb-4 mb-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-amber-700">Vertical Template 02</span>
+            <h2 class="text-2xl font-bold">Luxury Jewelry & Editorial Store</h2>
+            <p class="text-sm text-gray-500">Inspired by Sifat Hasan / Wonklab Shopify Jewelry Showcase</p>
+          </div>
+          <div class="flex space-x-2 text-xs">
+            <span class="bg-jewelry-espresso text-white px-2.5 py-1 rounded">Dark: #140B06</span>
+            <span class="bg-jewelry-bronze text-white px-2.5 py-1 rounded">Bronze: #5E4130</span>
+            <span class="bg-jewelry-softblue text-slate-800 px-2.5 py-1 rounded">Soft: #BAC4EB</span>
+          </div>
+        </div>
+
+        <!-- Editorial Hero Section -->
+        <div class="bg-[#EEEFEC] rounded-xl p-10 md:p-16 border text-center space-y-6">
+          <span class="text-xs font-semibold uppercase tracking-widest text-jewelry-bronze">Timeless Collections & Craftsmanship</span>
+          <h3 class="text-4xl md:text-5xl font-serif text-jewelry-espresso max-w-2xl mx-auto leading-tight">Elevated Jewelry Designed to Celebrate Every Moment</h3>
+          <p class="text-gray-600 text-sm max-w-lg mx-auto">A refined digital storefront combining editorial visual storytelling, generous whitespace, and intuitive product discovery.</p>
+          <div class="pt-4">
+            <button class="bg-jewelry-espresso text-white px-8 py-3 rounded-none text-xs font-bold uppercase tracking-widest hover:bg-jewelry-bronze transition">Explore Heritage Collection</button>
+          </div>
+        </div>
+
+        <!-- Category Grid & Product Highlight -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+          <div class="bg-gray-100 p-6 rounded-lg text-center border space-y-3">
+            <div class="h-48 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">[ Fine Rings ]</div>
+            <h4 class="font-serif font-bold text-lg text-jewelry-espresso">Diamond Bands</h4>
+            <p class="text-xs text-gray-500">Hand-set 18k Gold</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg text-center border space-y-3">
+            <div class="h-48 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">[ Necklaces ]</div>
+            <h4 class="font-serif font-bold text-lg text-jewelry-espresso">Pendant Chains</h4>
+            <p class="text-xs text-gray-500">Freshwater Pearl Accent</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg text-center border space-y-3">
+            <div class="h-48 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">[ Earrings ]</div>
+            <h4 class="font-serif font-bold text-lg text-jewelry-espresso">Minimalist Studs</h4>
+            <p class="text-xs text-gray-500">Recycled Platinum</p>
+          </div>
+          <div class="bg-gray-100 p-6 rounded-lg text-center border space-y-3">
+            <div class="h-48 bg-gray-200 rounded flex items-center justify-center text-xs text-gray-400">[ Bracelets ]</div>
+            <h4 class="font-serif font-bold text-lg text-jewelry-espresso">Bespoke Cuffs</h4>
+            <p class="text-xs text-gray-500">Custom Engraving</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERTICAL 3: SMART TECH & MOBILITY BRAND -->
+    <section id="sec-mobility" class="vertical-section hidden space-y-8">
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex justify-between items-center border-b pb-4 mb-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-emerald-600">Vertical Template 03</span>
+            <h2 class="text-2xl font-bold">Tech & Mobility Brand Identity</h2>
+            <p class="text-sm text-gray-500">Inspired by Ondriv Mobility & Seron Smart Shopping Brand Systems</p>
+          </div>
+          <div class="flex space-x-2 text-xs">
+            <span class="bg-ondriv-dark text-white px-2.5 py-1 rounded">Ondriv Dark: #030303</span>
+            <span class="bg-ondriv-teal text-white px-2.5 py-1 rounded">Teal: #26A58A</span>
+            <span class="bg-seron-blue text-white px-2.5 py-1 rounded">Seron Blue: #0B32E2</span>
+          </div>
+        </div>
+
+        <!-- Tech/Mobility Split Banner -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Ondriv Concept Block -->
+          <div class="bg-ondriv-dark text-white rounded-xl p-8 space-y-4 relative overflow-hidden">
+            <span class="text-xs font-bold text-ondriv-teal uppercase tracking-widest">Ondriv Mobility Platform</span>
+            <h3 class="text-3xl font-extrabold">Smarter Mobility for a Connected Tomorrow</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">Geometric brand mark symbol representing movement, connectivity, and eco-friendly urban transit interfaces.</p>
+            <div class="pt-2 flex items-center space-x-4">
+              <button class="bg-ondriv-teal text-black px-5 py-2.5 rounded-lg text-xs font-bold hover:bg-emerald-400">Launch Mobility App</button>
+              <span class="text-xs text-gray-400">Brand Palette: #030303 / #26A58A / #F11A00</span>
+            </div>
+          </div>
+
+          <!-- Seron Concept Block -->
+          <div class="bg-seron-light text-slate-900 border rounded-xl p-8 space-y-4">
+            <span class="text-xs font-bold text-seron-blue uppercase tracking-widest">Seron Smart Shopping</span>
+            <h3 class="text-3xl font-extrabold">Intuitive Product Discovery & Comparison</h3>
+            <p class="text-gray-600 text-xs leading-relaxed">Digital-first shopping brand system with real-time evaluation widgets and crisp UI cards.</p>
+            <div class="pt-2 flex items-center space-x-4">
+              <button class="bg-seron-blue text-white px-5 py-2.5 rounded-lg text-xs font-bold hover:bg-blue-700">Explore Smart Engine</button>
+              <span class="text-xs text-gray-500">Brand Palette: #0B32E2 / #F0A439</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERTICAL 4: CREATIVE PORTFOLIO & RESUME -->
+    <section id="sec-portfolio" class="vertical-section hidden space-y-8">
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex justify-between items-center border-b pb-4 mb-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-indigo-600">Vertical Template 04</span>
+            <h2 class="text-2xl font-bold">Creative Portfolio & Performer Resume</h2>
+            <p class="text-sm text-gray-500">Inspired by Wix Actress Resume & Figma Portfolio Gallery Templates</p>
+          </div>
+          <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded">2800+ Layout Foundation</span>
+        </div>
+
+        <!-- Portfolio Header Block -->
+        <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8 bg-slate-50 p-8 rounded-xl border">
+          <div class="w-32 h-32 bg-slate-300 rounded-full flex items-center justify-center font-bold text-slate-500 text-xl border-4 border-white shadow-md">Headshot</div>
+          <div class="space-y-2 text-center md:text-left">
+            <h3 class="text-3xl font-bold text-slate-900">Alex Morgan</h3>
+            <p class="text-indigo-600 font-medium text-sm">Actor · Creative Director · Voice Artist</p>
+            <p class="text-gray-600 text-xs max-w-lg">Highlight key accomplishments, showreels, and production credits with an elegantly simple layout built for casting directors and agencies.</p>
+            <div class="pt-2 flex justify-center md:justify-start space-x-3">
+              <button class="bg-slate-900 text-white px-4 py-2 rounded text-xs font-semibold">Download Headshot & CV</button>
+              <button class="border border-slate-300 text-slate-700 px-4 py-2 rounded text-xs font-semibold">Book Audition / Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERTICAL 5: EVENT & WEDDING LANDING PAGE -->
+    <section id="sec-wedding" class="vertical-section hidden space-y-8">
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <div class="flex justify-between items-center border-b pb-4 mb-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-rose-500">Vertical Template 05</span>
+            <h2 class="text-2xl font-bold">Event & Wedding Celebration Site</h2>
+            <p class="text-sm text-gray-500">Inspired by Figma Wedding Website & RSVP Templates</p>
+          </div>
+          <span class="bg-rose-100 text-rose-700 text-xs font-semibold px-2.5 py-1 rounded">Matrimonial Stationery</span>
+        </div>
+
+        <!-- Event Hero & RSVP Form Block -->
+        <div class="bg-rose-50 border border-rose-100 rounded-xl p-8 md:p-12 text-center space-y-6">
+          <span class="text-xs uppercase tracking-widest font-bold text-rose-500">Save The Date</span>
+          <h3 class="text-4xl md:text-5xl font-serif text-slate-900">Julian & Sophia</h3>
+          <p class="text-gray-600 text-xs">Saturday, October 24, 2026 · Grand Botanical Gardens</p>
+
+          <!-- Interactive RSVP Mock -->
+          <div class="max-w-md mx-auto bg-white p-6 rounded-xl shadow-sm border space-y-4 text-left">
+            <h4 class="font-bold text-sm text-gray-800 text-center">Confirm Your Attendance (RSVP)</h4>
+            <div>
+              <label class="block text-xs text-gray-500 mb-1">Full Name</label>
+              <input type="text" placeholder="e.g. Sarah Jenkins" class="w-full text-xs p-2.5 border rounded-lg focus:ring-2 focus:ring-rose-400 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs text-gray-500 mb-1">Attendance Status</label>
+              <select class="w-full text-xs p-2.5 border rounded-lg outline-none">
+                <option>Joyfully Accepts</option>
+                <option>Regretfully Declines</option>
+              </select>
+            </div>
+            <button class="w-full bg-rose-500 text-white text-xs font-bold py-2.5 rounded-lg hover:bg-rose-600">Submit RSVP Confirmation</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchVertical(id) {
+      document.querySelectorAll('.vertical-section').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active', 'text-white', 'font-bold'));
+      
+      document.getElementById('sec-' + id).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-' + id);
+      activeBtn.classList.add('active', 'text-white', 'font-bold');
+    }
+
+    function changeColor(cardId, colorHex) {
+      document.getElementById(cardId).style.backgroundColor = colorHex;
+    }
+  </script>
+</body>
+</html>

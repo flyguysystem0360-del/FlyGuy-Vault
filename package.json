@@ -1,0 +1,24 @@
+{
+  "name": "brand-compiler-agent",
+  "version": "1.0.0",
+  "description": "Isolated CLI container for compiling multi-vertical Tailwind/HTML brand landing pages",
+  "main": "brand-compiler-cli.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node brand-compiler-cli.js",
+    "compile:fashion": "node brand-compiler-cli.js --vertical fashion --name 'Aura Wear' --output /app/output/fashion.html",
+    "compile:tech": "node brand-compiler-cli.js --vertical tech --name 'Ondriv Mobility' --output /app/output/tech.html",
+    "compile:jewelry": "node brand-compiler-cli.js --vertical jewelry --name 'Solitaire Atelier' --output /app/output/jewelry.html",
+    "compile:portfolio": "node brand-compiler-cli.js --vertical portfolio --name 'Performer Profile' --output /app/output/portfolio.html",
+    "compile:wedding": "node brand-compiler-cli.js --vertical wedding --name 'Celebration Event' --output /app/output/wedding.html"
+  },
+  "keywords": [
+    "agentic",
+    "web-builder",
+    "tailwind",
+    "brand-system",
+    "cli-compiler"
+  ],
+  "author": "Gemini Notebook Agentic Suite",
+  "license": "MIT"
+}

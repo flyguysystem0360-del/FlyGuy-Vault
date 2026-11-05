@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  brand-compiler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: brand-compiler-agent
+    volumes:
+      - ./output:/app/output
+    environment:
+      - NODE_ENV=production
+    command: ["--brief", "Create a smart tech landing page for Ondriv Mobility", "--output", "/app/output/ondriv-tech.html"]
